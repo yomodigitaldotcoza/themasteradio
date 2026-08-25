@@ -17,7 +17,6 @@ with open(r"C:\Users\PC\.ssh\themasterradio.pub") as f:
 compute = oci.core.ComputeClient(config)
 
 VARIANTS = [
-    ("A1-4ocpu-24gb", "VM.Standard.A1.Flex", {"ocpus": 4, "memory_in_gbs": 24}),
     ("A1-2ocpu-12gb", "VM.Standard.A1.Flex", {"ocpus": 2, "memory_in_gbs": 12}),
 ]
 
