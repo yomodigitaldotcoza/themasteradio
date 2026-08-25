@@ -19,17 +19,17 @@ hardware → bandwidth → streaming-permission are all validated.
 
 ## Under consideration (require owner decision)
 
-### is*hosting "Hosting for Good" — best lead
+### is*hosting "Hosting for Good" — SELECTED, application in preparation
 - https://ishosting.com/en/for-good
 - Real Estonian hosting company (since 2005, 40+ DCs, Trustpilot/HostAdvice presence),
   sponsors OpenSSL Foundation, curl, Coolify (press-verified Jul 2026).
 - Offer: **free VPS or dedicated server, 12 months, renewable annually** for
   OSI-licensed open-source projects or registered non-profits; Jul 2026 press release
   also names **independent media organizations** as eligible for assistance.
-- Gaps before applying: The Master Radio is neither OSI-licensed nor a registered
-  non-profit today. Options: publish the `web/` platform under an OSI license,
-  or qualify as independent/community media. Specs, location, and AUP stance on
-  continuous audio streaming must be confirmed with them pre-commitment.
+- Form fields captured 2026-08-25 via live browser: project name, project URL,
+  description, infrastructure needs, team size, email, additional info.
+- Application package: see `docs/HOSTING-APPLICATION.md`.
+- Pending owner items: MIT open-source confirmation, public repo push, contact email.
 
 ### POSF (Pyro Open Source Foundation) — weak
 - https://pyro.host · github.com/posf-git (domain-verified org)
