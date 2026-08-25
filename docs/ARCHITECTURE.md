@@ -29,7 +29,7 @@ short-TTL cache) through a server-only module `lib/azuracast`.
 - **API (Phase 6+):** Fastify, added only when a real server-side need exists.
 - **Radio engine:** AzuraCast (Docker) on Oracle Cloud Always Free VM.
 - **Edge/TLS:** Caddy in front of Next.js and AzuraCast.
-- **DNS:** DuckDNS `themasteradio.duckdns.org` (token in untracked `scripts/.env.secrets`).
+- **DNS:** DuckDNS `themasteradio.duckdns.org` (token in untracked `ops/.env.secrets`).
 
 ## Execution tracks
 
@@ -52,8 +52,9 @@ otherwise Master Rotation). UI derives from it; no duplicated rule arrays.
 
 ## Security posture
 
-- No secrets in git: `.env*`, `*.pem`, `*cookies*`, `.playwright-mcp/`, `*.part` are
-  gitignored. DuckDNS token lives in `scripts/.env.secrets` (untracked).
+- No secrets in git: `.env*`, `*.pem`, `*cookies*`, `.playwright-mcp/`, `*.part`,
+  `private/`, `kilo.json` are gitignored. DuckDNS token lives in
+  `ops/.env.secrets` (untracked).
 - AzuraCast admin/API keys will live in VM-only env files, never in the repo.
 
 ## Known placeholders

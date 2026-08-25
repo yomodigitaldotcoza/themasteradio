@@ -23,5 +23,12 @@ __pycache__/
 *.log
 Thumbs.db
 .DS_Store
+
+# private (never published): strategy docs, tenancy-specific tooling, editor config
+private/
+kilo.json
+station-preview*.png
+*.tsbuildinfo
+
 *-render.png
 *.tsbuildinfo

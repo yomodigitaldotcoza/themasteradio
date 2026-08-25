@@ -16,14 +16,15 @@ npm start -- -p 3100
 Ops (repo root):
 
 ```
-python scripts/launch_retry.py                    # VM capacity hunt (socket-lock on 127.0.0.1:39157)
-powershell -File scripts/download-hearthis.ps1 -CookiesFile C:\Users\PC\.hearthis-cookies.txt
-bash scripts/duckdns-update.sh                    # needs DUCKDNS_TOKEN (auto-sources scripts/.env.secrets)
+powershell -File ops/download-hearthis.ps1 -CookiesFile C:\Users\PC\.hearthis-cookies.txt
+bash ops/duckdns-update.sh                        # needs DUCKDNS_TOKEN (auto-sources ops/.env.secrets)
+python private/launch_retry.py                    # Oracle VM capacity hunt (local-only, not published)
 ```
 
 ## Rules
 
-- Never commit secrets: `.env*`, `*.pem`, `*cookies*`, `.playwright-mcp/` are gitignored — keep it that way.
+- Never commit secrets: `.env*`, `*.pem`, `*cookies*`, `.playwright-mcp/`, `private/` are gitignored — keep it that way.
+- This repo is published under MIT: everything tracked must be safe to be public.
 - Do not edit `listen.html` (frozen design reference) or `mock up.png`.
 - Styling: semantic classes live in `web/src/app/globals.css` (ported verbatim from the
   approved prototype). Tailwind tokens exist for new components; do not rewrite the
