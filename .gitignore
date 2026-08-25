@@ -1,0 +1,25 @@
+# dependencies / builds
+node_modules/
+.next/
+out/
+dist/
+
+# secrets & credentials
+.env
+.env.*
+.env.secrets
+*.pem
+*cookies*
+
+# media cache & partial downloads
+*.part
+.playwright-mcp/
+
+# python
+__pycache__/
+*.pyc
+
+# logs & OS junk
+*.log
+Thumbs.db
+.DS_Store

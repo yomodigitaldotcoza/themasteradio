@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Master Radio — Your Soundtrack. 24/7.</title>
+<meta name="description" content="The Master Radio — old-school hip hop, house, disco, soul and lounge from Mzansi. Streaming 24/7." />
+<meta property="og:title" content="The Master Radio — 24/7" />
+<meta property="og:description" content="Old-school hip hop · house · disco · soul · lounge. Live from Mzansi." />
+<meta property="og:url" content="https://themasteradio.duckdns.org/" />
+<meta name="theme-color" content="#0b0b0e" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0b0e; --bg2:#101014; --panel:#141419; --panel2:#191920; --line:#26262e;
+  --fg:#f2f2f4; --muted:#9b9ba6; --yellow:#f5c518; --yellow2:#ffd83d; --red:#ff3b3b;
+  --teal:#40c4ff; --green:#7ac97f; --orange:#ff5e62; --purple:#a55eea;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--fg);font-size:15px}
+.display{font-family:'Archivo Black',Inter,sans-serif;letter-spacing:.5px}
+a{color:inherit}
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(11,11,14,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.navin{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;flex-direction:column;line-height:1;text-decoration:none}
+.logo .crown{color:var(--yellow);font-size:13px;text-align:center;margin-bottom:1px}
+.logo b{font-family:'Archivo Black';font-size:17px;color:var(--yellow);letter-spacing:1px}
+.logo b span{color:#fff}
+.navlinks{display:flex;gap:26px;list-style:none}
+.navlinks a{text-decoration:none;color:var(--fg);font-size:12.5px;font-weight:700;letter-spacing:1.5px;padding:6px 0;border-bottom:2px solid transparent}
+.navlinks a:hover,.navlinks a.active{color:var(--yellow);border-color:var(--yellow)}
+.navright{display:flex;align-items:center;gap:12px}
+.livenow{display:inline-flex;align-items:center;gap:7px;border:1px solid #3a3a44;border-radius:8px;padding:8px 14px;font-size:11.5px;font-weight:800;letter-spacing:1px;text-decoration:none}
+.livenow .dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:p 1.2s infinite}
+@keyframes p{50%{opacity:.3}}
+.burger{display:none;background:none;border:0;color:#fff;font-size:22px;cursor:pointer}
+@media(max-width:880px){.navlinks{display:none}.burger{display:block}}
+@media(max-width:520px){.livenow{display:none}}
+
+/* HERO */
+.hero{padding:46px 0 30px;background:radial-gradient(900px 380px at 18% -60px,rgba(245,197,24,.10),transparent),radial-gradient(700px 340px at 90% 0,rgba(64,196,255,.05),transparent)}
+.herogrid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:start}
+@media(max-width:880px){.herogrid{grid-template-columns:1fr}}
+.livebadge{display:inline-flex;align-items:center;gap:8px;color:var(--red);font-size:12px;font-weight:800;letter-spacing:2px}
+.livebadge .dot{width:9px;height:9px;border-radius:50%;background:var(--red);animation:p 1.2s infinite}
+.herotitle{font-family:'Archivo Black';line-height:.95;margin:14px 0 6px;font-size:clamp(44px,7vw,74px);text-transform:uppercase}
+.herotitle .y{color:var(--yellow);display:block}
+.herotitle .w{color:#fff;display:block}
+.tagline{font-style:italic;font-weight:600;font-size:19px;color:#e8e8ee;margin:10px 0 14px}
+.genres{color:var(--muted);font-size:11.5px;font-weight:700;letter-spacing:2.5px;margin-bottom:22px}
+.stats{display:flex;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:22px;background:var(--panel)}
+.stat{flex:1;display:flex;gap:10px;align-items:center;padding:14px 16px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat svg{width:22px;height:22px;color:var(--yellow);flex-shrink:0}
+.stat b{display:block;font-size:16px}
+.stat small{color:var(--muted);font-size:10.5px;letter-spacing:.5px;line-height:1.25;display:block}
+@media(max-width:640px){.stats{flex-direction:column}.stat{border-right:0;border-bottom:1px solid var(--line)}}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:10px;font-weight:800;font-size:13.5px;letter-spacing:1px;text-decoration:none;cursor:pointer;border:0}
+.btn.y{background:var(--yellow);color:#111}
+.btn.o{background:transparent;color:#fff;border:1.5px solid #3a3a44}
+.btn:hover{filter:brightness(1.08)}
+.follow{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:11px;letter-spacing:2px;font-weight:700}
+.follow a{width:36px;height:36px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:#fff;text-decoration:none;font-size:15px}
+.follow a:hover{border-color:var(--yellow);color:var(--yellow)}
+
+/* NOW PLAYING CARD */
+.npcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
+.nphead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.nphead h3{font-size:13px;letter-spacing:2px;color:var(--muted);font-weight:800}
+.livetag{background:var(--red);color:#fff;font-size:10.5px;font-weight:800;padding:4px 10px;border-radius:6px;letter-spacing:1px}
+.npbody{display:grid;grid-template-columns:190px 1fr;gap:18px;align-items:center}
+@media(max-width:520px){.npbody{grid-template-columns:1fr}}
+.art{width:190px;height:190px;border-radius:12px;overflow:hidden;position:relative;display:grid;place-items:center;text-align:center;padding:10px}
+@media(max-width:520px){.art{width:100%;height:170px}}
+.art .t{font-family:'Archivo Black';text-transform:uppercase;line-height:1.05;z-index:2}
+.art-house{background:linear-gradient(160deg,#23201a,#0c0b08 70%);border:1px solid #33302a}
+.art-house::before{content:"";position:absolute;inset:auto 0 0 0;height:46%;
+  background:repeating-linear-gradient(90deg,rgba(245,197,24,.85) 0 7px,transparent 7px 15px,rgba(245,197,24,.5) 15px 20px,transparent 20px 34px);
+  -webkit-mask:linear-gradient(transparent,#000 55%);mask:linear-gradient(transparent,#000 55%);opacity:.55}
+.art-house .t{color:var(--yellow);font-size:15px}
+.art-house .t small{display:block;color:#fff;font-size:9px;letter-spacing:2px;margin-top:5px;font-family:Inter}
+.npinfo .title{font-family:'Archivo Black';font-size:21px;line-height:1.15;margin-bottom:5px}
+.npinfo .artist{color:var(--yellow);font-size:13.5px;font-weight:700;margin-bottom:14px}
+.wave{display:flex;align-items:center;gap:2px;height:34px;margin-bottom:12px}
+.wave i{flex:1;background:var(--yellow);border-radius:2px;opacity:.9;min-width:2px}
+.npmeta{display:flex;align-items:center;gap:14px;color:var(--muted);font-size:12.5px;font-weight:600}
+.npmeta svg{width:16px;height:16px;vertical-align:-3px;margin-right:4px}
+.heart{margin-left:auto;color:#fff}
+.controls{display:flex;align-items:center;justify-content:center;gap:26px;margin-top:18px}
+.cbtn{background:none;border:0;color:#fff;cursor:pointer;font-size:17px;display:grid;place-items:center}
+.cbtn svg{width:20px;height:20px}
+.playbig{width:64px;height:64px;border-radius:50%;background:var(--yellow);color:#111;display:grid;place-items:center;border:0;cursor:pointer;box-shadow:0 8px 30px rgba(245,197,24,.35)}
+.playbig svg{width:24px;height:24px}
+.vol{display:flex;align-items:center;gap:10px;color:var(--muted)}
+.volbar{width:90px;height:4px;background:#33333d;border-radius:99px;position:relative}
+.volbar::after{content:"";position:absolute;left:0;top:0;bottom:0;width:65%;background:var(--yellow);border-radius:99px}
+.volbar::before{content:"";position:absolute;left:65%;top:50%;transform:translate(-50%,-50%);width:11px;height:11px;background:#fff;border-radius:50%}
+.upnext{margin-top:18px;border-top:1px solid var(--line);padding-top:14px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.upnext small{display:block;color:var(--yellow);font-size:10.5px;font-weight:800;letter-spacing:2px;margin-bottom:4px}
+.upnext b{font-size:14px}
+.upnext span{color:var(--muted);font-size:12.5px}
+.upnext .time{color:var(--muted);font-size:13px}
+
+/* SECTIONS */
+section{padding:34px 0 6px}
+.sechead{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.sechead h2{font-family:'Archivo Black';font-size:17px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}
+.sechead .rule{flex:1;height:1px;background:var(--line)}
+.sechead a{color:var(--yellow);font-size:11.5px;font-weight:800;letter-spacing:1.5px;text-decoration:none;white-space:nowrap}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:880px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.cards{grid-template-columns:1fr}}
+.rcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:transform .15s,border-color .15s}
+.rcard:hover{transform:translateY(-3px);border-color:#3a3a44}
+.rart{height:120px;position:relative;display:grid;place-items:center;text-align:center;padding:8px}
+.rart .t{font-family:'Archivo Black';text-transform:uppercase;font-size:14px;line-height:1.1;z-index:2;padding:4px}
+.rmeta{padding:11px 13px;display:flex;align-items:center;gap:10px}
+.rmeta small{color:var(--muted);font-size:11px;display:block}
+.rmeta b{font-size:13px;display:block;line-height:1.3}
+.rmeta span{color:var(--muted);font-size:11.5px}
+.rplay{margin-left:auto;width:32px;height:32px;border-radius:50%;border:1px solid #3a3a44;background:var(--panel2);color:#fff;display:grid;place-items:center;cursor:pointer;flex-shrink:0}
+.rplay:hover{background:var(--yellow);color:#111;border-color:var(--yellow)}
+.rplay svg{width:12px;height:12px}
+.art-soul{background:radial-gradient(circle at 50% 45%,#3a2f26 0 26%,#171310 27%,#0d0b09 60%),linear-gradient(160deg,#241d16,#0b0908)}
+.art-soul .t{color:#e8d9b0;font-size:13px}
+.art-90s{background:repeating-linear-gradient(45deg,#15130e 0 14px,#1d1a12 14px 28px)}
+.art-90s .t{color:var(--yellow);font-size:16px;text-shadow:2px 2px 0 #000}
+.art-disco{background:radial-gradient(circle at 32% 30%,#ffd1ff 0 8%,#e05fff 20%,#8a3ffc 48%,#3b1e8f 75%,#150a33)}
+.art-disco::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.14) 0 1px,transparent 1px 7px),repeating-linear-gradient(90deg,rgba(255,255,255,.14) 0 1px,transparent 1px 7px)}
+.art-disco .t{color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.art-lounge{background:linear-gradient(180deg,#2b1a4d 0%,#a13d6b 45%,#ff8a5c 78%,#ffc46b)}
+.art-lounge::before{content:"";position:absolute;top:18%;left:50%;transform:translateX(-50%);width:52px;height:52px;border-radius:50%;background:#ffe1a8;box-shadow:0 0 34px 12px rgba(255,225,168,.55)}
+.art-lounge .t{color:#fff;position:absolute;bottom:8px;left:0;right:0;text-shadow:0 2px 8px rgba(0,0,0,.55)}
+
+/* SCHEDULE */
+.sched{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+@media(max-width:960px){.sched{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.sched{grid-template-columns:repeat(2,1fr)}}
+.scard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 14px;text-align:center}
+.scard.today{border-color:var(--yellow);box-shadow:0 0 0 1px var(--yellow)}
+.scard svg{width:30px;height:30px;margin-bottom:10px}
+.scard .day{font-size:10.5px;font-weight:800;letter-spacing:1.5px;margin-bottom:4px}
+.scard b{display:block;font-size:13.5px;line-height:1.25;margin-bottom:5px}
+.scard .time{color:var(--muted);font-size:11.5px;display:block;margin-bottom:10px}
+.badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:10.5px;font-weight:800;letter-spacing:.5px}
+.b-house{background:rgba(64,196,255,.16);color:var(--teal)}
+.b-lounge{background:rgba(122,201,127,.16);color:var(--green)}
+.b-hiphop{background:rgba(255,94,98,.16);color:var(--orange)}
+.b-disco{background:rgba(245,197,24,.16);color:var(--yellow)}
+.b-any{background:rgba(165,94,234,.16);color:var(--purple)}
+.c-teal{color:var(--teal)}.c-green{color:var(--green)}.c-orange{color:var(--orange)}.c-yellow{color:var(--yellow)}.c-purple{color:var(--purple)}
+
+/* ABOUT + REQUEST */
+.duo{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin-top:8px}
+@media(max-width:880px){.duo{grid-template-columns:1fr}}
+.aboutcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:200px 1fr}
+@media(max-width:560px){.aboutcard{grid-template-columns:1fr}}
+.aboutimg{background:url('https://img.hearthis.at/6/7/5/_/uploads/9440945/image_user/w800_q70_ptrue_v2_----1626856366576.jpg') center/cover;filter:grayscale(1) contrast(1.05);min-height:230px}
+.abouttxt{padding:20px 22px}
+.abouttxt small{color:var(--yellow);font-size:10.5px;font-weight:800;letter-spacing:2px}
+.abouttxt h3{font-family:'Archivo Black';font-size:21px;text-transform:uppercase;line-height:1.15;margin:8px 0 10px}
+.abouttxt p{color:#c9c9d2;font-size:13.5px;line-height:1.65;margin-bottom:16px}
+.reqcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.reqcard .mic{color:var(--yellow);font-size:22px}
+.reqcard h3{font-family:'Archivo Black';color:var(--yellow);font-size:18px;margin:6px 0 2px}
+.reqcard>p{color:var(--muted);font-size:13px;margin-bottom:14px}
+.field{position:relative;margin-bottom:10px}
+.field svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--muted)}
+.field input{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:12px 12px 12px 36px;color:#fff;font-size:13.5px;font-family:Inter}
+.field input:focus{outline:none;border-color:var(--yellow)}
+.send{width:100%;background:var(--yellow);color:#111;border:0;border-radius:9px;padding:13px;font-weight:800;font-size:13.5px;letter-spacing:1px;cursor:pointer}
+.shout{width:100%;margin-top:10px;background:transparent;border:1px solid var(--line);border-radius:9px;padding:12px;color:#fff;font-weight:700;font-size:12.5px;cursor:pointer;text-decoration:none;display:block;text-align:center}
+.shout:hover{border-color:var(--green);color:var(--green)}
+
+/* BOTTOM PLAYER */
+.bplayer{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(13,13,17,.96);backdrop-filter:blur(12px);border-top:2px solid var(--yellow)}
+.bin{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:16px}
+.bin .live{background:var(--red);color:#fff;font-size:9.5px;font-weight:800;padding:3px 8px;border-radius:5px;letter-spacing:1px}
+.bin .tt b{font-size:13.5px;display:block}
+.bin .tt span{color:var(--muted);font-size:11.5px}
+.bin .spacer{flex:1}
+.bctrl{display:flex;align-items:center;gap:18px}
+.bctrl .cbtn svg{width:16px;height:16px}
+.bctrl .playbig{width:44px;height:44px;box-shadow:0 4px 18px rgba(245,197,24,.4)}
+.bctrl .playbig svg{width:16px;height:16px}
+.bvol{width:70px;height:4px;background:#33333d;border-radius:99px;position:relative}
+.bvol::after{content:"";position:absolute;inset:0 35% 0 0;background:var(--yellow);border-radius:99px}
+.listening{border:1px solid var(--line);border-radius:9px;padding:6px 12px;text-align:center}
+.listening b{color:var(--yellow);font-size:14px;display:block;line-height:1}
+.listening small{color:var(--muted);font-size:8.5px;letter-spacing:1px;font-weight:800}
+.totop{width:38px;height:38px;border-radius:9px;border:1px solid var(--line);background:var(--panel2);color:#fff;display:grid;place-items:center;cursor:pointer;text-decoration:none}
+@media(max-width:640px){.bvol,.listening{display:none}.bin .tt span{display:none}}
+body{padding-bottom:76px}
+footer{border-top:1px solid var(--line);padding:26px 20px 30px;text-align:center;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container navin">
+    <a class="logo" href="#home">
+      <span class="crown">♛</span>
+      <b>MASTER<br><span>⚡ RADIO ⚡</span></b>
+    </a>
+    <ul class="navlinks">
+      <li><a class="active" href="#home">HOME</a></li>
+      <li><a href="#schedule">SCHEDULE</a></li>
+      <li><a href="#shows">SHOWS</a></li>
+      <li><a href="#request">REQUEST</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#request">CONTACT</a></li>
+    </ul>
+    <div class="navright">
+      <a class="livenow" href="#"><span class="dot"></span> LIVE NOW</a>
+      <button class="burger">☰</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container herogrid">
+    <div>
+      <span class="livebadge"><span class="dot"></span> LIVE ON AIR</span>
+      <h1 class="herotitle"><span class="w">The</span><span class="y">Master</span><span class="w">Radio</span></h1>
+      <p class="tagline">Your soundtrack. 24/7.</p>
+      <p class="genres">OLD-SCHOOL HIP HOP • HOUSE • DISCO • SOUL • LOUNGE</p>
+      <div class="stats">
+        <div class="stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <div><b id="listeners">12</b><small>LISTENING NOW</small></div>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+          <div><b>3,842</b><small>PLAYS THIS MONTH</small></div>
+        </div>
+        <div class="stat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5M19.1 4.9C23 8.8 23 15.2 19.1 19.1"/><circle cx="12" cy="12" r="2"/></svg>
+          <div><b style="font-size:12.5px">BROADCASTING</b><small>FROM MZANSI 🇿🇦</small></div>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn y" href="#">▶ LISTEN LIVE</a>
+        <a class="btn o" href="#request">💬 REQUEST A TRACK</a>
+      </div>
+      <div class="follow">
+        FOLLOW US
+        <a href="#" title="Instagram">📸</a>
+        <a href="#" title="TikTok">🎵</a>
+        <a href="#" title="Facebook">👍</a>
+        <a href="#" title="WhatsApp">💬</a>
+        <a href="https://hearthis.at/themasterdj/" target="_blank" rel="noopener" title="hearthis.at">🎧</a>
+      </div>
+    </div>
+
+    <div class="npcard">
+      <div class="nphead">
+        <h3>NOW PLAYING</h3>
+        <span class="livetag">● LIVE</span>
+      </div>
+      <div class="npbody">
+        <div class="art art-house"><span class="t">The Master<small>DEEP HOUSE MIX<br>NOVEMBER 2020</small></span></div>
+        <div class="npinfo">
+          <div class="title">Deep House Mix November 2020</div>
+          <div class="artist">The Master</div>
+          <div class="wave" id="wave"></div>
+          <div class="npmeta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>12 listeners</span>
+            <span>• 192 kbps</span>
+            <span class="heart">♡</span>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="cbtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+        <button class="playbig"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <button class="cbtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
+        <div class="vol"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/></svg><div class="volbar"></div></div>
+      </div>
+      <div class="upnext">
+        <div><small>UP NEXT</small><b>Straight Outta 90s</b> <span>• The Master</span></div>
+        <div class="time">17:58</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <section id="shows">
+    <div class="sechead"><h2>Recently Played</h2><div class="rule"></div><a href="#">VIEW ALL →</a></div>
+    <div class="cards">
+      <div class="rcard">
+        <div class="rart art-soul"><span class="t">30 Years<br>of Soul</span></div>
+        <div class="rmeta"><div><small>18:42</small><b>30 Years of Soul</b><span>The Master</span></div><button class="rplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+      </div>
+      <div class="rcard">
+        <div class="rart art-90s"><span class="t">Straight<br>Outta 90s</span></div>
+        <div class="rmeta"><div><small>17:58</small><b>Straight Outta 90s</b><span>The Master</span></div><button class="rplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+      </div>
+      <div class="rcard">
+        <div class="rart art-disco"><span class="t">The Master<br>Disco Mix</span></div>
+        <div class="rmeta"><div><small>17:15</small><b>The Master Disco Mix</b><span>The Master</span></div><button class="rplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+      </div>
+      <div class="rcard">
+        <div class="rart art-lounge"><span class="t">Sunday Lounge<br>Sessions</span></div>
+        <div class="rmeta"><div><small>15:02</small><b>Sunday Lounge Sessions</b><span>The Master</span></div><button class="rplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule">
+    <div class="sechead"><h2>This Week On Air</h2><div class="rule"></div><a href="#">FULL SCHEDULE →</a></div>
+    <div class="sched" id="schedcards">
+      <div class="scard" data-days="6">
+        <svg class="c-teal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        <div class="day c-teal">SATURDAY</div><b>All-Day House</b><span class="time">00:00 – 23:59</span><span class="badge b-house">HOUSE</span>
+      </div>
+      <div class="scard" data-days="0">
+        <svg class="c-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0z"/><path d="M4 18v2M20 18v2"/></svg>
+        <div class="day c-green">SUNDAY</div><b>Sunday Lounge Sessions</b><span class="time">00:00 – 23:59</span><span class="badge b-lounge">LOUNGE</span>
+      </div>
+      <div class="scard" data-days="1,2,3,4,5">
+        <svg class="c-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="12" rx="2"/><circle cx="8" cy="14" r="2.5"/><circle cx="16" cy="14" r="2.5"/><path d="M6 7V4h12v3"/></svg>
+        <div class="day c-orange">MON – FRI</div><b>Real Hip Hop Lives</b><span class="time">18:00 – 22:00</span><span class="badge b-hiphop">HIP HOP</span>
+      </div>
+      <div class="scard" data-days="5">
+        <svg class="c-yellow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <div class="day c-yellow">FRIDAY</div><b>Disco Heat</b><span class="time">22:00 – 00:00</span><span class="badge b-disco">DISCO</span>
+      </div>
+      <div class="scard" data-days="0,1,2,3,4,5,6">
+        <svg class="c-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+        <div class="day c-purple">ALL OTHER TIMES</div><b>The Master Rotation</b><span class="time">24/7</span><span class="badge b-any">BEST OF EVERYTHING</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="duo">
+      <div class="aboutcard">
+        <div class="aboutimg"></div>
+        <div class="abouttxt">
+          <small>THE MASTER'S WORLD</small>
+          <h3>Born in Mzansi.<br>Built for the sound.</h3>
+          <p>From the dusty crates of old-school hip hop to the deepest house grooves, The Master Radio brings you the records that shaped a generation and continue to move us today. 24/7. Non-stop. Real music. No fillers.</p>
+          <a class="btn o" href="#" style="padding:11px 18px;font-size:12px">MORE ABOUT THE MASTER</a>
+        </div>
+      </div>
+      <div class="reqcard" id="request">
+        <div class="mic">🎤</div>
+        <h3>REQUEST A TRACK</h3>
+        <p>What do you want to hear?</p>
+        <form id="reqform">
+          <div class="field">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+            <input id="song" type="text" placeholder="Artist / Song" />
+          </div>
+          <div class="field">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <input id="name" type="text" placeholder="Your name (optional)" />
+          </div>
+          <button class="send" type="submit">➤ SEND REQUEST</button>
+        </form>
+        <a class="shout" href="https://wa.me/27000000000?text=I%20want%20a%20shout-out%20on%20The%20Master%20Radio!" target="_blank" rel="noopener">💬 WANT A SHOUT-OUT? ADD ONE →</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  themasteradio.duckdns.org · powered by AzuraCast on Oracle Cloud Always Free · R0 forever
+</footer>
+
+<div class="bplayer">
+  <div class="bin">
+    <span class="live">LIVE</span>
+    <div class="tt"><b id="bpshow">The Master Rotation</b><span id="bptrack">Deep House Mix November 2020</span></div>
+    <div class="spacer"></div>
+    <div class="bctrl">
+      <button class="cbtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+      <button class="playbig"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+      <button class="cbtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
+      <div class="bvol"></div>
+      <div class="listening"><b>12</b><small>LISTENING</small></div>
+      <a class="totop" href="#home">↑</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var w = document.getElementById('wave');
+  var seed = 7, out = '';
+  for (var i = 0; i < 42; i++) {
+    seed = (seed * 9301 + 49297) % 233280;
+    var h = 8 + (seed / 233280) * 26;
+    out += '<i style="height:' + h.toFixed(0) + 'px"></i>';
+  }
+  w.innerHTML = out;
+
+  function updateOnAir() {
+    var now = new Date();
+    var day = now.getDay();
+    var mins = now.getHours() * 60 + now.getMinutes();
+    var rules = [
+      { days: [6], from: 0, to: 1439, name: 'All-Day House' },
+      { days: [0], from: 0, to: 1439, name: 'Sunday Lounge Sessions' },
+      { days: [1,2,3,4,5], from: 1080, to: 1319, name: 'Real Hip Hop Lives' },
+      { days: [5], from: 1320, to: 1439, name: 'Disco Heat' },
+      { days: [0,1,2,3,4,5,6], from: -1, to: 9999, name: 'The Master Rotation' }
+    ];
+    var current = 'The Master Rotation';
+    for (var i = 0; i < rules.length; i++) {
+      var r = rules[i];
+      if (r.days.indexOf(day) !== -1 && mins >= r.from && mins <= r.to) { current = r.name; break; }
+    }
+    document.getElementById('bpshow').textContent = current;
+    var cards = document.querySelectorAll('#schedcards .scard');
+    var match = { 'All-Day House': 0, 'Sunday Lounge Sessions': 1, 'Real Hip Hop Lives': 2, 'Disco Heat': 3, 'The Master Rotation': 4 }[current];
+    cards.forEach(function (c, idx) {
+      c.classList.toggle('today', idx === match);
+    });
+  }
+  updateOnAir();
+  setInterval(updateOnAir, 60000);
+
+  document.getElementById('reqform').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var song = document.getElementById('song').value.trim();
+    var name = document.getElementById('name').value.trim();
+    var msg = 'Track request for The Master Radio: ' + (song || '(no track given)') + (name ? ' — from ' + name : '');
+    window.open('https://wa.me/27000000000?text=' + encodeURIComponent(msg), '_blank');
+  });
+})();
+</script>
+</body>
+</html>
